@@ -19,6 +19,7 @@ package com.example.demo.controller;
 /**
  * Created by Sogumontar Hendra Simangunsong on 13/06/2020.
  */
+@CrossOrigin
 @Controller
 @RequestMapping("/barcodeApp")
 public class AkunController {
