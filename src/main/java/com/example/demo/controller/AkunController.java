@@ -104,6 +104,10 @@ public class AkunController {
         return ResponseEntity.ok().body(new AkunResponse("Exp"));
     }
 
+    @GetMapping("/timeOut/all")
+    public ResponseEntity<?> findAllTimeOut(){
+        return ResponseEntity.ok(timeOutRepo.findAll());
+    }
     @PostMapping("/set/{kode}")
     public ResponseEntity<?> setTimeOut(@PathVariable String kode) {
         TimeOut timeOut = new TimeOut(
