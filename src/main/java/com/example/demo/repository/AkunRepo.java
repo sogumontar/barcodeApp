@@ -26,4 +26,6 @@ public interface AkunRepo extends JpaRepository<Akun,String> {
 
     Akun findFirstByNim(String nim);
 
+    Boolean existsByNim(String nim);
+
 }
