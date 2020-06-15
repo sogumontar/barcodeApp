@@ -95,6 +95,7 @@ public class AkunController {
             DateTimeFormatter dtfs = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
             Akun akun = akunRepo.findFirstByNim(nim);
+            System.out.println(dtfs.format(now));
             Absen absen = new Absen(
                     UUID.randomUUID().toString(),
                     akun.getNama(),
@@ -103,7 +104,7 @@ public class AkunController {
                     akun.getProdi(),
                     akun.getGd(),
                     akun.getKelas(),
-                    dtfs.format(now).toString()
+                    dtfs.format(now)
             );
             if(! absenRepo.existsByNimAndKode(nim,kode)) {
                 absenRepo.save(absen);
