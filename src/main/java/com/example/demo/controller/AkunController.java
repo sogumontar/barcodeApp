@@ -89,8 +89,8 @@ public class AkunController {
     }
 
 
-    @GetMapping("/absen/{nim}/{kode}")
-    public ResponseEntity<?> absen(@PathVariable String nim, @PathVariable String kode) {
+    @GetMapping("/absen/{nim}/{kode}/{date}")
+    public ResponseEntity<?> absen(@PathVariable String nim, @PathVariable String kode, @PathVariable String date) {
         if(timeOutService.checkIfExpired(kode)){
             DateTimeFormatter dtfs = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
@@ -104,7 +104,7 @@ public class AkunController {
                     akun.getProdi(),
                     akun.getGd(),
                     akun.getKelas(),
-                    dtfs.format(now)
+                    date
             );
             if(! absenRepo.existsByNimAndKode(nim,kode)) {
                 absenRepo.save(absen);
