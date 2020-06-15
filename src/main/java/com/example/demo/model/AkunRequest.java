@@ -12,12 +12,22 @@ public class AkunRequest {
 
     String prodi;
 
+    String gd;
 
-    public AkunRequest(String nama, String kelas, String nim, String prodi) {
+    public AkunRequest(String nama, String kelas, String nim, String prodi, String gd) {
         this.nama = nama;
         this.kelas = kelas;
         this.nim = nim;
         this.prodi = prodi;
+        this.gd = gd;
+    }
+
+    public String getGd() {
+        return gd;
+    }
+
+    public void setGd(String gd) {
+        this.gd = gd;
     }
 
     public String getNama() {

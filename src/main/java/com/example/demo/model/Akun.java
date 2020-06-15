@@ -29,20 +29,32 @@ public class Akun {
     @Column(name = "prodi")
     String prodi;
 
+    @Column(name = "gd")
+    String gd;
+
     @Column(name = "log")
     Integer log;
 
     @Column(name = "date")
     String date;
 
-    public Akun(String id, String nama, String kelas, String nim, String prodi, Integer log, String date) {
+    public Akun(String id, String nama, String kelas, String nim, String prodi, String gd, Integer log, String date) {
         this.id = id;
         this.nama = nama;
         this.kelas = kelas;
         this.nim = nim;
         this.prodi = prodi;
+        this.gd = gd;
         this.log = log;
         this.date = date;
+    }
+
+    public String getGd() {
+        return gd;
+    }
+
+    public void setGd(String gd) {
+        this.gd = gd;
     }
 
     public String getId() {

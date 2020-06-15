@@ -29,6 +29,7 @@ public class AkunServiceImpl {
                 akunRequest.getKelas(),
                 akunRequest.getNim(),
                 akunRequest.getProdi(),
+                akunRequest.getGd(),
                 0,
                 dtf.format(now).toString()
         );

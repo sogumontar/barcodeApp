@@ -26,11 +26,59 @@ public class Absen {
     @Column(name = "kode")
     String kode;
 
-    public Absen(String id, String nama, String nim, String kode) {
+    @Column(name = "prodi")
+    String prodi;
+
+    @Column(name = "gd")
+    String gd;
+
+    @Column(name = "kelas")
+    String kelas;
+
+    @Column(name = "date")
+    String date;
+
+    public Absen(String id, String nama, String nim, String kode, String prodi, String gd, String kelas, String date) {
         this.id = id;
         this.nama = nama;
         this.nim = nim;
         this.kode = kode;
+        this.prodi = prodi;
+        this.gd = gd;
+        this.kelas = kelas;
+        this.date = date;
+    }
+
+    public String getProdi() {
+        return prodi;
+    }
+
+    public void setProdi(String prodi) {
+        this.prodi = prodi;
+    }
+
+    public String getGd() {
+        return gd;
+    }
+
+    public void setGd(String gd) {
+        this.gd = gd;
+    }
+
+    public String getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getId() {

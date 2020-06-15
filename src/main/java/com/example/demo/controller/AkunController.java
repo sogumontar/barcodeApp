@@ -97,7 +97,11 @@ public class AkunController {
                     UUID.randomUUID().toString(),
                     akun.getNama(),
                     nim,
-                    kode
+                    kode,
+                    akun.getProdi(),
+                    akun.getGd(),
+                    akun.getKelas(),
+                    dtf.format(now).toString()
             );
             absenRepo.save(absen);
             return ResponseEntity.ok().body(new AkunResponse("Sukses"));
