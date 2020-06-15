@@ -124,10 +124,11 @@ public class AkunController {
 
     @PostMapping("/set/{kode}")
     public ResponseEntity<?> setTimeOut(@PathVariable String kode) {
+        int is = (int) (new Date().getTime()/1000);
         TimeOut timeOut = new TimeOut(
                 UUID.randomUUID().toString(),
                 kode,
-                i,
+                is,
                 "Active");
         timeOutRepo.save(timeOut);
         return ResponseEntity.ok().body(new AkunResponse("Sukses"));
