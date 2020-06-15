@@ -119,7 +119,7 @@ public class AkunController {
         TimeOut timeOut=timeOutRepo.findFirstByKode(kode);
         System.out.println(i);
         System.out.println(timeOut.getDate());
-        return ResponseEntity.ok(i-timeOut.getDate());
+        return ResponseEntity.ok(timeOut.getDate());
     }
 
     @PostMapping("/set/{kode}")
