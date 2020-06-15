@@ -12,11 +12,12 @@ import java.util.Date;
  */
 @Service
 public class TimeOutService {
-    int i = (int) (new Date().getTime()/1000);
+
     @Autowired
     TimeOutRepo timeOutRepo;
 
     public Boolean checkIfExpired(String kode){
+        int i = (int) (new Date().getTime()/1000);
         TimeOut timeOut = timeOutRepo.findFirstByKode(kode);
         if(i-timeOut.getDate()>=1800){
             return false;
