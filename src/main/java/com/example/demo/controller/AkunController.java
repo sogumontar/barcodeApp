@@ -117,6 +117,8 @@ public class AkunController {
     @GetMapping("/timeOut/{kode}")
     public ResponseEntity<?> findTimeOut(@PathVariable String kode){
         TimeOut timeOut=timeOutRepo.findFirstByKode(kode);
+        System.out.println(i);
+        System.out.println(timeOut.getDate());
         return ResponseEntity.ok(i-timeOut.getDate());
     }
 
