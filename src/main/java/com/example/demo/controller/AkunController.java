@@ -103,7 +103,9 @@ public class AkunController {
                     akun.getKelas(),
                     dtf.format(now).toString()
             );
-            absenRepo.save(absen);
+            if(! absenRepo.existsByNimAndKode(nim,kode)) {
+                absenRepo.save(absen);
+            }
             return ResponseEntity.ok().body(new AkunResponse("Sukses"));
         }
         return ResponseEntity.ok().body(new AkunResponse("Exp"));

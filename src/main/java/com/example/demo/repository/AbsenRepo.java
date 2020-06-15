@@ -12,5 +12,6 @@ import java.util.List;
 @Repository
 public interface AbsenRepo extends JpaRepository<Absen,String> {
     List<Absen> findAllByKode(String kode);
+    Boolean existsByNimAndKode(String nim,String kode);
 }
 
