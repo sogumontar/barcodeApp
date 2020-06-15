@@ -92,6 +92,8 @@ public class AkunController {
     @GetMapping("/absen/{nim}/{kode}")
     public ResponseEntity<?> absen(@PathVariable String nim, @PathVariable String kode) {
         if(timeOutService.checkIfExpired(kode)){
+            DateTimeFormatter dtfs = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
             Akun akun = akunRepo.findFirstByNim(nim);
             Absen absen = new Absen(
                     UUID.randomUUID().toString(),
@@ -101,7 +103,7 @@ public class AkunController {
                     akun.getProdi(),
                     akun.getGd(),
                     akun.getKelas(),
-                    dtf.format(now).toString()
+                    dtfs.format(now).toString()
             );
             if(! absenRepo.existsByNimAndKode(nim,kode)) {
                 absenRepo.save(absen);
